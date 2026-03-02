@@ -12,7 +12,9 @@ def func1():
     names = [cheese['id'] for cheese in data]
 
     print(data[names.index(pokemon)]['name'][language])
-func1()
+#func1()
 
-
+def pokesearch():
+    poketype = input("What types of pokemon do you want to see? ")
+    
 
