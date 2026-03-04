@@ -16,19 +16,19 @@ def func1():
     print(data[names.index(pokemon)]['name'][language])
 #func1()
 
-def pokesearch(data2, type2):
+def pokesearch(data2):
+    y = 0
     poketype = input("What types of pokemon do you want to see? ")
-    types_found = 0
-    for cheese in data2:
-        if poketype in cheese['type']:
-            print(cheese['name']['english'])
-            types_found = 1
-        else:
-            if poketype not in type2['english']:
-                types_found == 0
-                return
-    if types_found == 0:
-            print('This type does not exist')
+    for t in data2['type']:
+        if poketype in t:
+            y = 1
+            return
+    if y == 0:
+        print('This type does not exist')
+    if y == 1:     
+        for cheese in data2:
+            if poketype in cheese['type']:
+                print(cheese['name']['english'])
         
-pokesearch(data, type)
+pokesearch(data)
 
