@@ -21,7 +21,7 @@ def func1():
 def is_valid_type(search_type):
 
     for type_object in types:
-        english_type = type_object.get("english")
+        english_type = type_object["english"]
         if search_type == english_type:
             return True
             
@@ -35,7 +35,7 @@ def search_pokedex(search_type):
         else:
             pass
 
-user_type = input("What types of pokemon do you want to see? ")
+#user_type = input("What types of pokemon do you want to see? ")
 
 def func2():
     valid = is_valid_type(user_type)
@@ -43,5 +43,25 @@ def func2():
         search_pokedex(user_type)
     else:
         print("This type does not exist")
-func2()
+#func2()
+
+def search_pokemon(search_pokemon):
+    found = False
+    for pokemons in pokedex:
+        english_names = pokemons['name']['english']
+        if search_pokemon in english_names:
+            print(english_names)
+            found = True
+    if not found:
+        print("Sorry, there aren't any pokemon like this")
+        
+            
+    
+
+user_poke_part = input("What do you want the pokemon that you want to see to start with? ")
+
+search_pokemon(user_poke_part)
+
+
+
 
