@@ -5,6 +5,8 @@ pokedex_file = open("./pokedex.json", encoding="utf8")
 pokedex = json.load(pokedex_file)
 types_file = open("./types.json", encoding="utf8")
 types = json.load(types_file)
+moves_file = open("./moves.json", encoding="utf8")
+moves = json.load(moves_file)
 
 def func1():
     pokemon_number = input("What number pokemon would you like to choose? ")
@@ -58,9 +60,25 @@ def search_pokemon(search_pokemon):
             
     
 
-user_poke_part = input("What do you want the pokemon that you want to see to start with? ")
+#user_poke_part = input("What do you want the pokemon that you want to see to start with? ")
 
-search_pokemon(user_poke_part)
+#search_pokemon(user_poke_part)
+def func4():
+    user_poke = input("Which pokemon's moves would you like to see? ")
+    user_list = []
+    for pokes in pokedex:
+        poketypes = pokes['type']
+        if user_poke == poketypes:
+            user_list.append(poketypes)
+            return
+    user_type = user_list[0]
+    for move in moves:
+        check_moves = move['ename']
+        if user_type == check_moves:
+            print(check_moves)
+func4()
+        
+
 
 
 
