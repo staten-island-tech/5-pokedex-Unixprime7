@@ -65,17 +65,13 @@ def search_pokemon(search_pokemon):
 #search_pokemon(user_poke_part)
 def func4():
     user_poke = input("Which pokemon's moves would you like to see? ")
-    user_list = []
-    for pokes in pokedex:
-        poketypes = pokes['type']
-        if user_poke == poketypes:
-            user_list.append(poketypes)
-            return
-    user_type = user_list[0]
+    name_data = pokedex['name']['english']
+    for 
+
     for move in moves:
-        check_moves = move['ename']
-        if user_type == check_moves:
-            print(check_moves)
+        check_types = move['type']
+        if user_type == check_types:
+            print(move['ename'])
 func4()
         
 
