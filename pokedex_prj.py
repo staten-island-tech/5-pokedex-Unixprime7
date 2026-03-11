@@ -65,8 +65,8 @@ def search_pokemon(search_pokemon):
 #search_pokemon(user_poke_part)
 def func4():
     user_poke = input("Which pokemon's moves would you like to see? ")
-    name_data = pokedex['name']['english']
-    for 
+    user_type = pokedex.index(user_poke)['type']
+
 
     for move in moves:
         check_types = move['type']
