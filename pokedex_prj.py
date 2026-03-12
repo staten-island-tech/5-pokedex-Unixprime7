@@ -104,11 +104,11 @@ def func4():
         type_moves = get_type_moves(poke_type)
 
         for type_move in type_moves:
-        moves_list.append(type_move)
+            moves_list.append(type_move)
 
     for move in moves_list:
         print(move)
-#func4()
+func4()
 
 
 
