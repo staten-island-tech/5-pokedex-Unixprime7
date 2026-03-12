@@ -62,18 +62,54 @@ def search_pokemon(search_pokemon):
 
 #user_poke_part = input("What do you want the pokemon that you want to see to start with? ")
 
-#search_pokemon(user_poke_part)
+def get_pokemon_types(pokemon_val):
+    for pokemon in pokedex:
+        e_pokename = pokemon['name']['english']
+        if pokemon_val == e_pokename:
+            poke_type = pokemon['type']
+            return poke_type
+
+# def get_type_moves(type_vals):
+#     move_list = []
+
+#     for move in moves:
+#         move_type = move['type']
+#         if move_type == type_vals[0]:
+#             move_list.append(move['ename'])
+        
+#     for move in moves:
+#         move_type = move['type']
+#         if move_type == type_vals[1]:
+#             move_list.append(move['ename'])
+#         if int(move['id']) == 619:
+#             return move_list
+        
+def get_type_moves(type_val):
+    move_list = []
+    
+    for move in moves:
+        move_type = move['type']
+        if move_type == type_val:
+            move_list.append(move['ename'])
+    
+    return move_list
+
 def func4():
     user_poke = input("Which pokemon's moves would you like to see? ")
-    user_type = pokedex.index(user_poke)['type']
+    poke_types = get_pokemon_types(user_poke)
 
+    moves_list = []
+    for poke_type in poke_types:
+        # print(f"poke type {poke_type}")
+        type_moves = get_type_moves(poke_type)
 
-    for move in moves:
-        check_types = move['type']
-        if user_type == check_types:
-            print(move['ename'])
-func4()
-        
+        for type_move in type_moves:
+        moves_list.append(type_move)
+
+    for move in moves_list:
+        print(move)
+#func4()
+
 
 
 
